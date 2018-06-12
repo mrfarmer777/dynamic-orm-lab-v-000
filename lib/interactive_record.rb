@@ -44,9 +44,10 @@ class InteractiveRecord
         res<<name
       end
     end
+    res
   end
 
-  
+
 
 
 
