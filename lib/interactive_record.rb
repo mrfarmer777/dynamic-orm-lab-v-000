@@ -4,7 +4,7 @@ require 'active_support/inflector'
 class InteractiveRecord
   #gets the name of the table for an artibitrary class
   def self.table_name
-    self.to_s.pluralize #converts self to a string and adds an s with pluralize (thanks, inflector)
+    self.to_s.downcase.pluralize #converts self to a string and adds an s with pluralize (thanks, inflector)
   end
 
   def self.column_names
@@ -20,9 +20,9 @@ class InteractiveRecord
     table_info.each do |row|
       column_names<<row["name"]  #thanks to returning hashes, we can just ask for the column name for each column (stored here as a row)
     end
-    column_names.compact #adding in compact, just incase there are nils or unnamed columns.
+    column_names.compact #adding in compact, just incase there are nils or unnamed columns.      
   end
 
-
-
+  
+  
 end
