@@ -38,13 +38,13 @@ class InteractiveRecord
   #same deal here, the class has a column_names method, every instance will be able to access it then.
   def col_names_for_insert
     res=[]
-    names=self.class.column_names
+    names=self.class.column_names #gets all the names as an array from class method
     names.each do |name|
-      if name!="id"
-        res<<name
+      if name!="id"   #if the name isn't id
+        res<<name     #dump it into the results, or shovel it rather...
       end
     end
-    res
+    res.join(', ')     #return that ish as a comma-separated string
   end
 
 
