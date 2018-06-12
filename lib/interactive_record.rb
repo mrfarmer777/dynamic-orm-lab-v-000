@@ -67,7 +67,7 @@ class InteractiveRecord
   end
 
   def self.find_by_name(name)
-    sql="SELECT * from #{self.table_name} WHERE name = '#{name}''" #Gotta wrap these interpolations in single quotes!!
+    sql="SELECT * from #{self.table_name} WHERE name = '#{name}'" #Gotta wrap these interpolations in single quotes!!
     DB[:conn].execute(sql)
   end
 
