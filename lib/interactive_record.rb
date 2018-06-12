@@ -20,7 +20,7 @@ class InteractiveRecord
     table_info.each do |row|
       column_names<<row["name"]  #thanks to returning hashes, we can just ask for the column name for each column (stored here as a row)
     end
-    column_names.compact #adding in compact, just incase there are nils or unnamed columns.      
+    column_names.compact #adding in compact, just incase there are nils or unnamed columns.
   end
 
   #Dynamic initialize method takes in a hash as options for initialization
@@ -30,7 +30,7 @@ class InteractiveRecord
     end
   end
 
-  
-  
-  
+
+
+
 end
