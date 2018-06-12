@@ -66,6 +66,11 @@ class InteractiveRecord
     @id=id_hash["last_insert_rowid()"] #after it's flattened, you gotta get the value using the key
   end
 
+  def find_by_name(name)
+    sql="SELECT * from #{table_name_for_insert} WHERE name=#{name}"
+    DB[:conn].execute(sql)
+  end
+
 
 
 
