@@ -67,14 +67,14 @@ class InteractiveRecord
   end
 
   def self.find_by_name(name)
-    sql="SELECT * from #{self.table_name} WHERE name = #{name}"
+    sql="SELECT * from #{self.table_name} WHERE name = '#{name}''" #Gotta wrap these interpolations in single quotes!!
     DB[:conn].execute(sql)
   end
 
   def self.find_by(atr_hash)
     key=atr_hash.keys.first
     val=atr_hash[key]
-    sql="SELECT * from #{self.table_name} WHERE #{key} = #{val}"
+    sql="SELECT * from #{self.table_name} WHERE #{key} = ''#{val}''" # Wrap it!
     DB[:conn].execute(sql)
   end
 
