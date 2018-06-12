@@ -4,11 +4,9 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
-  def intitialize(options={})
-    super
-    options.each do |prop, value|
-      attr_accessor prop.to_sym
+    self.column_names.each do |col_name|  #! This doesn't need to be in the initialize function. The column names are accessible because of the super class.
+      attr_accessor col_name.to_sym
     end
-  end
+
 
 end
