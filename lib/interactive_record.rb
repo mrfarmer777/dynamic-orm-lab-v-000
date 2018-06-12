@@ -26,7 +26,7 @@ class InteractiveRecord
   #Dynamic initialize method takes in a hash as options for initialization
   def initialize(options={})
     options.each do |property,value|    #for each key/value pair in the options hash passed in
-      self.send("#{property}=",value)   #call self.PROPERTY=value to create 'setters' for each option (getters or attr_accessors assigned in the child class)
+      self.send("#{property}=", value)   #call self.PROPERTY=value to create 'setters' for each option (getters or attr_accessors assigned in the child class)
     end
   end
 
