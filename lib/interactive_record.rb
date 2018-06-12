@@ -52,7 +52,7 @@ class InteractiveRecord
     cols=self.class.column_names
     cols.each do |attribute|
       if attribute!="id"
-        val=self.send("#{attribute}")
+        val="'#{send(attribute)}'" unless send(col_name).nil? #Gotta wrap senc(attribute) in single quotes for SQL use later, so a string of strings can be created
         values<<val
       end
     end
