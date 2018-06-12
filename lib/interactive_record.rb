@@ -74,7 +74,7 @@ class InteractiveRecord
   def self.find_by(atr_hash)
     key=atr_hash.keys.first
     val=atr_hash[key]
-    sql="SELECT * from #{self.table_name} WHERE #{key} = ''#{val}''" # Wrap it!
+    sql="SELECT * from #{self.table_name} WHERE #{key} = '#{val}'" # Wrap it!
     DB[:conn].execute(sql)
   end
 
