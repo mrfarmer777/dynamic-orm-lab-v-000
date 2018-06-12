@@ -71,6 +71,11 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
+  def find_by(atr_hash)
+    key=atr_hash.keys.first
+    val=atr_hash[key]
+    sql="SELECT * from #{table_name_for_insert} WHERE #{key}=#{val}"
+
 
 
 
