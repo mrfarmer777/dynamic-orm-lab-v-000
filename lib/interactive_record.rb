@@ -1,6 +1,6 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
-
+require "pry"
 class InteractiveRecord
   #gets the name of the table for an artibitrary class
   def self.table_name
