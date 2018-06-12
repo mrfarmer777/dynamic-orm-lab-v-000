@@ -8,5 +8,5 @@ class Student < InteractiveRecord
       attr_accessor col_name.to_sym   #each column in the table should have an attribute accessor for it, stored as a symbol
     end
 
-    
+
 end
