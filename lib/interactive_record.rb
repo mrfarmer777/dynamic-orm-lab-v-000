@@ -53,7 +53,7 @@ class InteractiveRecord
     cols.each do |attribute|
       if attribute!="id"
         val=self.send("#{attribute}")
-        vales<<val
+        values<<val
       end
     end
     vales.join(', ')
