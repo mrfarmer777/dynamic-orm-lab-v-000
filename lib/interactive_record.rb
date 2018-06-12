@@ -75,6 +75,8 @@ class InteractiveRecord
     key=atr_hash.keys.first
     val=atr_hash[key]
     sql="SELECT * from #{table_name_for_insert} WHERE #{key}=#{val}"
+    DB[:conn].execute(sql)
+  end
 
 
 
