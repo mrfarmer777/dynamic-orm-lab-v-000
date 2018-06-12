@@ -63,7 +63,7 @@ class InteractiveRecord
     sql="INSERT INTO #{table_name_for_insert}(#{col_names_for_insert}) VALUES (#{values_for_insert})"
     DB[:conn].execute(sql)
     id_hash=DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert} AS id" ) #!forgot to flatten!!
-    @id=id_hash[id]
+    @id=id_hash['id']
   end
 
 
