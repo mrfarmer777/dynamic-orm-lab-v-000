@@ -30,6 +30,23 @@ class InteractiveRecord
     end
   end
 
+  #must be defined separately from table_name because it's an instance method.
+  def table_name_for_insert
+    self.class.table_name
+  end
+
+  #same deal here, the class has a column_names method, every instance will be able to access it then.
+  def col_names_for_insert
+    res=[]
+    names=self.class.column_names
+    names.each do |name|
+      if name!="id"
+        res<<name
+      end
+    end
+  end
+
+  
 
 
 
