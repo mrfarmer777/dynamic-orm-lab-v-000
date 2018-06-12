@@ -56,7 +56,7 @@ class InteractiveRecord
         values<<val
       end
     end
-    vales.join(', ')
+    values.join(', ')
 
   end
 
