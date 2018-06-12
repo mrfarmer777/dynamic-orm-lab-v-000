@@ -47,6 +47,19 @@ class InteractiveRecord
     res.join(', ')     #return that ish as a comma-separated string
   end
 
+  def values_for_insert
+    values=[]
+    cols=self.class.column_names
+    cols.each do |attribute|
+      if attribute!="id"
+        val=self.send("#{attribute}")
+        vales<<val
+      end
+    end
+    vales.join(', ')
+
+  end
+
 
 
 
